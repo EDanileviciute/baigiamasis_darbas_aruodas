@@ -5,7 +5,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pom.utilities.Driver;
+import utilities.Driver;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -23,10 +23,6 @@ public class Common {
 
     public static void setUpDriver() {
         Driver.setDriver();
-    }
-
-    public static void setUpEdgeDriver() {
-        Driver.setDriverWithEdge();
     }
 
     public static void openUrl(String url) {
@@ -105,15 +101,6 @@ public class Common {
         List<Boolean> selectedStatusList = new ArrayList<>();
         List<WebElement> elements = getSelectElement(locator).getAllSelectedOptions();
 
-//        for (String value : selectValues) {
-//
-//            for (WebElement element : elements) {
-//                if (element.getAttribute("value").equals(value)) {
-//                    selectedStatusList.add(element.isSelected());
-//                    break;
-//                }
-//            }
-//        }
         for (WebElement element : elements) {
             selectedStatusList.add(element.isSelected());
         }
@@ -164,7 +151,6 @@ public class Common {
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             httpURLConnection.setConnectTimeout(8000);
             httpURLConnection.connect();
-
 
             if (httpURLConnection.getResponseCode() >= 400) {
                 brokenLinks.add(

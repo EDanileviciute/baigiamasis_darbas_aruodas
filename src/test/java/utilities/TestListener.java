@@ -5,7 +5,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import pom.pages.Common;
+import pages.Common;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,7 +16,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class TestListener implements ITestListener {
-    //ctl + i
     @Override
     public void onTestFailure(ITestResult result) {
         if(!Common.brokenLinks.isEmpty() && !Common.validLinks.isEmpty()){
@@ -38,7 +37,6 @@ public class TestListener implements ITestListener {
         File screeshotFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
 
         String dir = "./screenshots/";
-//        String fileName = "screenshot_" + UUID.randomUUID() +".png";
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd_HH_mm_SSS");
         String date = LocalDateTime.now().format(formatter);
@@ -65,7 +63,7 @@ public class TestListener implements ITestListener {
         String fileBrokenLinks = "fileBrokenLinks" + date + ".txt";
         String fileValidLinks = "fileValidLinks" + date + ".txt";
         String fileBrokenImages = "fileBrokenImages" + date + ".txt";
-        String dir = "C:\\JAVA paskaitos\\selenium_demo\\linkReports\\";
+        String dir = "C:\\JAVA paskaitos\\baigiamasis_darbas_aruodas\\linkReports";
 
 
         Path pathFileBrokenLinks = Paths.get(dir.concat(fileBrokenLinks));
