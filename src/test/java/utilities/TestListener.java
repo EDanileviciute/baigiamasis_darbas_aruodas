@@ -21,15 +21,12 @@ public class TestListener implements ITestListener {
         if (!Common.brokenLinks.isEmpty() && !Common.validLinks.isEmpty()) {
             takeScreenshot();
         }
-
         saveDataIntoFile();
-
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
         saveDataIntoFile();
-
     }
 
     private void takeScreenshot() {

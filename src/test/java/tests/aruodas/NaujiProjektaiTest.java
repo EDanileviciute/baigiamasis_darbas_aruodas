@@ -3,8 +3,6 @@ package tests.aruodas;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.Locators;
-import pages.aruodas.HomePage;
 import pages.aruodas.NaujiProjektaiPage;
 import tests.TestBase;
 
@@ -29,9 +27,18 @@ public class NaujiProjektaiTest extends TestBase {
 
         Assert.assertTrue(actualResult.contains(expectedResult));
     }
+    @Test
+    public void testNewProjectSearchByProjectWithMap(){
+        String expectedResult = "Butai nuomai";
+        String actualResult;
 
-    //@Test
-    //    public void testNewProjectSearchByObjectType(){
+        NaujiProjektaiPage.chooseObjectByType();
+        NaujiProjektaiPage.openResultsInMap();
 
-    ////div[@class='project-list-content']//a
+        actualResult = NaujiProjektaiPage.readTextOfProjectWindowInMap(); //neranda Xpath'u zemelapyje
+
+        Assert.assertTrue(actualResult.equals(expectedResult));
+    }
+
+    ////div[@class='project-list-content']//a - visi paieskos rezultatai
 }

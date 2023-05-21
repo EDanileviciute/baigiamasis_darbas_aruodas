@@ -62,12 +62,6 @@ public class HomeTest extends TestBase {
         HomePage.chooseObjectType();
         HomePage.chooseMunicipality();
         HomePage.chooseCity();
-//        HomePage.clickToChooseNeighbourhood();
-//        HomePage.switchToNewWindow();
-//        HomePage.chooseNeighbourhood();
-//        HomePage.clickToChooseStreet();
-//        HomePage.switchToNewWindow();
-//        HomePage.chooseStreet();
         HomePage.chooseSizeRange(sizeMinimum, sizeMaximum);
         HomePage.chooseRoomNumber();
         HomePage.chooseInstallationState();
@@ -80,12 +74,18 @@ public class HomeTest extends TestBase {
                 actualResult.contains(expectedResult),
                 "Actual: %s, Expected: %s".formatted(actualResult, expectedResult));
     }
+    @Test
+    public void testSearchByManualInputWithAdvancedSearch(){
+        String searchText = "butai vilnius";
+        String expectedResult = "1-5 aukštas, ne pirmas, butai vilnius";
+        String actualResult;
 
+        HomePage.chooseAdvancedSearch();
+        HomePage.chooseFloorSelection();
+        HomePage.enterSearchTextIntoSearchBar(searchText);
 
-//    @Test
-//    public void testSearchFormFieldForObjectTypeByText(){
-//        //TEKSTINĖ PAIEŠKA laukelis
-//
-//    }
+        actualResult = HomePage.readTextOfSearchResults();
+        Assert.assertTrue(actualResult.contains(expectedResult));
+    }
 }
 

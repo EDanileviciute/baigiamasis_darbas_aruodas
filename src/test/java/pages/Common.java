@@ -60,7 +60,6 @@ public class Common {
     }
 
     public static String getTextFromElement(By locator) {
-
         return getElemet(locator).getText();
     }
 

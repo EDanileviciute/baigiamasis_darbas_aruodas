@@ -126,4 +126,20 @@ public class HomePage {
     public static String readTextOfSearchResults() {
         return Common.getTextFromElement(Locators.Aruodas.Home.spanSearchDescription);
     }
+
+    public static void chooseAdvancedSearch() {
+        Common.clickOnElement(Locators.Aruodas.Home.spanAdvancedSearch);
+    }
+
+    public static void chooseFloorSelection() {
+        Common.clickOnElement(Locators.Aruodas.Home.spanFloorNumber);
+        Common.clickOnElement(Locators.Aruodas.Home.listFloorMinimumOption1);
+        Common.clickOnElement(Locators.Aruodas.Home.listFloorMaximumOption5);
+        Common.clickOnElement(Locators.Aruodas.Home.inputRadioButtonOption1);
+    }
+
+    public static void enterSearchTextIntoSearchBar(String text) {
+        Common.sendKeysToElement(Locators.Aruodas.Home.inputSearchText, text);
+        Common.clickOnElement(Locators.Aruodas.Home.inputSearchButton);
+    }
 }
