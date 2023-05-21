@@ -13,14 +13,12 @@ public class HomeTest extends TestBase {
         HomePage.open();
         HomePage.closeCookiesAcceptanceWindow();
     }
-
     @Test
     public void testLogInWithValidCredentials() {
         String userName = "egured@yahoo.com";
         String password = "Password1";
         String expectedResult = "Mano aruodas";
         String actualResult;
-
 
         HomePage.openRegistrationForm();
         HomePage.waitForPopupWindowForRegistration();
@@ -52,13 +50,37 @@ public class HomeTest extends TestBase {
 
         Assert.assertTrue(actualResult.equals(expectedResult));
     }
+    @Test
+    public void testSearchFormFieldForObjectTypeBySelect(){
+        String sizeMinimum = "40";
+        String sizeMaximum = "100";
+        String priceMinimum = "0";
+        String priceMaximum = "1000000";
+        String expectedResult = "2-2 kamb., 40-100 m², iki 1000000 €, įrengtas";
+        String actualResult;
 
+        HomePage.chooseObjectType();
+        HomePage.chooseMunicipality();
+        HomePage.chooseCity();
+//        HomePage.clickToChooseNeighbourhood();
+//        HomePage.switchToNewWindow();
+//        HomePage.chooseNeighbourhood();
+//        HomePage.clickToChooseStreet();
+//        HomePage.switchToNewWindow();
+//        HomePage.chooseStreet();
+        HomePage.chooseSizeRange(sizeMinimum, sizeMaximum);
+        HomePage.chooseRoomNumber();
+        HomePage.chooseInstallationState();
+        HomePage.choosePriceRange(priceMinimum, priceMaximum);
+        HomePage.searchForOptions();
 
-    //    @Test
-//    public void testSearchFormFieldForObjectTypeBySelect() {
-//
-//
-//    }
+        actualResult = HomePage.readTextOfSearchResults();
+
+        Assert.assertTrue(
+                actualResult.contains(expectedResult),
+                "Actual: %s, Expected: %s".formatted(actualResult, expectedResult));
+    }
+
 
 //    @Test
 //    public void testSearchFormFieldForObjectTypeByText(){

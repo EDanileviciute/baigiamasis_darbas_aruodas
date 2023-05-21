@@ -18,8 +18,8 @@ import java.time.format.DateTimeFormatter;
 public class TestListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
-        if(!Common.brokenLinks.isEmpty() && !Common.validLinks.isEmpty()){
-        takeScreenshot();
+        if (!Common.brokenLinks.isEmpty() && !Common.validLinks.isEmpty()) {
+            takeScreenshot();
         }
 
         saveDataIntoFile();
@@ -28,7 +28,7 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult result) {
-            saveDataIntoFile();
+        saveDataIntoFile();
 
     }
 
@@ -44,15 +44,12 @@ public class TestListener implements ITestListener {
         String fileName = "screenshot_" + date + ".png";
 
         File copyToFile = new File("%s%s".formatted(dir, fileName));
-        //./screenshots/new_screenshot.png
-
 
         try {
             FileUtils.copyFile(screeshotFile, copyToFile);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     private void saveDataIntoFile() {
@@ -65,25 +62,23 @@ public class TestListener implements ITestListener {
         String fileBrokenImages = "fileBrokenImages" + date + ".txt";
         String dir = "C:\\JAVA paskaitos\\baigiamasis_darbas_aruodas\\linkReports";
 
-
         Path pathFileBrokenLinks = Paths.get(dir.concat(fileBrokenLinks));
         Path pathFileValidLinks = Paths.get(dir.concat(fileValidLinks));
         Path pathFileBrokenImages = Paths.get(dir.concat(fileBrokenImages));
 
         try {
-            if (!Common.brokenLinks.isEmpty()){
-            Files.write(pathFileBrokenLinks, Common.brokenLinks);
+            if (!Common.brokenLinks.isEmpty()) {
+                Files.write(pathFileBrokenLinks, Common.brokenLinks);
             }
-            if (!Common.validLinks.isEmpty()){
-            Files.write(pathFileValidLinks, Common.validLinks);
+            if (!Common.validLinks.isEmpty()) {
+                Files.write(pathFileValidLinks, Common.validLinks);
             }
-            if (!Common.brokenImages.isEmpty()){
-            Files.write(pathFileBrokenImages, Common.brokenImages);
+            if (!Common.brokenImages.isEmpty()) {
+                Files.write(pathFileBrokenImages, Common.brokenImages);
             }
 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
 }

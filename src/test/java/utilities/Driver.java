@@ -21,7 +21,6 @@ public class Driver {
 //        options.addArguments("--headless=new");
 
         drivers.set(new ChromeDriver(options));
-
         drivers.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
     }
 
