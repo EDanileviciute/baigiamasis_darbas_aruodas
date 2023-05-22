@@ -30,7 +30,7 @@ public abstract class TestBase {
         if (result.getStatus() == ITestResult.FAILURE) {
             captureScreenshot();
         }
-        Common.closeDriver();
+//        Common.closeDriver();
     }
 
     private void captureScreenshot() {

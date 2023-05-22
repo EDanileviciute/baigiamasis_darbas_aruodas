@@ -47,7 +47,7 @@ public class Common {
         return Driver.getDriver().findElement(locator);
     }
 
-    private static List<WebElement> getElements(By locator) {
+    public static List<WebElement> getElements(By locator) {
         return Driver.getDriver().findElements(locator);
     }
 

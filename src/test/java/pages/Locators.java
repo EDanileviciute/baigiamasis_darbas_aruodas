@@ -56,6 +56,7 @@ public class Locators {
             );
             public static By inputSearchText = By.xpath("//input[@id='search_text']");
             public static By inputQuartalFilter = By.xpath("//input[@id='inQuartalFilter']");
+            public static By divSavedIcons = By.xpath("//a//div[@class='icon-u-save']");
         }
 
         public static class Prisijungti {
@@ -106,6 +107,11 @@ public class Locators {
             public static By spanObjectDescription = By.xpath(
                     "//span[contains(text(), 'Objektas užsienyje')]"
             );
+        }
+
+        public static class ManoAruodas {
+            public static By spanDelete = By.xpath("//span[@class='svg-delete']");
+            public static By headerUser = By.xpath("//h2[@class='user-header']");
         }
     }
 }

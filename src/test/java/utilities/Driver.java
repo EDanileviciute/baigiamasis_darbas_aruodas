@@ -16,7 +16,7 @@ public class Driver {
         System.setProperty("webdriver.http.factory", "jdk-http-client");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
-        options.addArguments("--force-device-scale-factor=0.75");
+        options.addArguments("--force-device-scale-factor=0.85");
         options.addArguments("--disable-notifications");
 //        options.addArguments("--headless=new");
 
