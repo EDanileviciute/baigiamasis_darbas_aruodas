@@ -13,8 +13,9 @@ public class UzsienioObjektaiTest extends TestBase {
         UzsienioObjektaiPage.open();
         UzsienioObjektaiPage.closeCookiesAcceptanceWindow();
     }
+
     @Test
-    public void testObjectSelectionByCountryWithAddingToFavourites(){
+    public void testObjectSelectionByCountryWithAddingToFavourites() {
         String userName = "egured@yahoo.com";
         String password = "Password1";
         String expectedResult = "Objektas užsienyje";

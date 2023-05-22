@@ -284,7 +284,7 @@ public class Common {
     }
 
     public static boolean waitForAlertToBeVisibleCustom() {
-        int waitingSeconds = 7;
+        int waitingSeconds = 3;
 
         for (int i = 0; i < (waitingSeconds * 2); i++) {
             try {
@@ -368,14 +368,6 @@ public class Common {
                 .sendKeys(Keys.ENTER)
                 .build()
                 .perform();
-    }
-
-    public static void setAttributeValueWithJavascriptExecutor(By locator, String attributeName, String value) {
-        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) Driver.getDriver();
-        javascriptExecutor.executeScript(
-                "arguments[0].%s='%s';".formatted(attributeName, value),
-                getElemet(locator)
-        );
     }
 
     public static List<String> getTextFromElements(By locator) {

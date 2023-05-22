@@ -27,8 +27,9 @@ public class Locators {
             public static By divDistrict = By.xpath("//div[@id='display_FDistrict']");
             public static By labelVilniausM = By.xpath("//label[contains(text(), 'Vilniaus m.')]");
             public static By spanMikrorajonas = By.xpath("//span[@id='display_text_FQuartal']");
-            public static By inputInQuartalFilter = By.xpath("//input[@id='inQuartalFilter']");
-            public static By labelZirmunai = By.xpath("//span[contains(text(), 'Žirmūnai')]");
+            public static By inputCheckAll = By.xpath(
+                    "//div[@class='list-block']//label[@class='lb-select-all']//input[@id='cbCheckAll']"
+            );
             public static By divSaveSelected = By.xpath("//div[@id='btSaveSelected']");
             public static By spanDisplayStreet = By.xpath("//span[@id='display_text_FStreets']");
             public static By inputInStreetsFilter = By.xpath("//input[@id='inStreetsFilter']");
@@ -54,6 +55,7 @@ public class Locators {
                     "//label[@class='search-form__field-checkbox']//input[@type='radio' and @value='1']"
             );
             public static By inputSearchText = By.xpath("//input[@id='search_text']");
+            public static By inputQuartalFilter = By.xpath("//input[@id='inQuartalFilter']");
         }
 
         public static class Prisijungti {

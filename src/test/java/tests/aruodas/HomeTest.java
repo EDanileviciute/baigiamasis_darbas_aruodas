@@ -13,6 +13,7 @@ public class HomeTest extends TestBase {
         HomePage.open();
         HomePage.closeCookiesAcceptanceWindow();
     }
+
     @Test
     public void testLogInWithValidCredentials() {
         String userName = "egured@yahoo.com";
@@ -32,6 +33,7 @@ public class HomeTest extends TestBase {
 
         Assert.assertEquals(actualResult, expectedResult);
     }
+
     @Test
     public void testLogInWithInvalidCredentials() {
         String userName = "egured@yahoo.com";
@@ -50,8 +52,9 @@ public class HomeTest extends TestBase {
 
         Assert.assertTrue(actualResult.equals(expectedResult));
     }
+
     @Test
-    public void testSearchFormFieldForObjectTypeBySelect(){
+    public void testSearchFormFieldForObjectTypeBySelect() {
         String sizeMinimum = "40";
         String sizeMaximum = "100";
         String priceMinimum = "0";
@@ -74,8 +77,9 @@ public class HomeTest extends TestBase {
                 actualResult.contains(expectedResult),
                 "Actual: %s, Expected: %s".formatted(actualResult, expectedResult));
     }
+
     @Test
-    public void testSearchByManualInputWithAdvancedSearch(){
+    public void testSearchByManualInputWithAdvancedSearch() {
         String searchText = "butai vilnius";
         String expectedResult = "1-5 aukštas, ne pirmas, butai vilnius";
         String actualResult;
@@ -86,6 +90,17 @@ public class HomeTest extends TestBase {
 
         actualResult = HomePage.readTextOfSearchResults();
         Assert.assertTrue(actualResult.contains(expectedResult));
+    }
+    @Test
+    public void testSearchFormFieldForObjectTypeBySelectNeighbourhood(){
+        String expectedResult;
+        String actualResult;
+
+        HomePage.chooseObjectType();
+        HomePage.chooseMunicipality();
+        HomePage.chooseCity();
+        HomePage.clickToChooseNeighbourhood();
+        HomePage.chooseAllNeighbourhoods(); // - neina paklikinti elementu popup lange
     }
 }
 

@@ -28,10 +28,8 @@ public class UzsienioObjektaiPage {
     public static void addObjectToFavourites(String text, String message) {
         Common.clickOnElement(Locators.Aruodas.UzsienioObjektai.divObjectListItemLatvia);
         Common.clickDoubleOnElementWithActions(Locators.Aruodas.UzsienioObjektai.divSave);
-        Common.sendKeysToElement(Locators.Aruodas.UzsienioObjektai.inputUsername,
-                text);
-        Common.sendKeysToElement(Locators.Aruodas.UzsienioObjektai.inputPassword,
-                message);
+        Common.sendKeysToElement(Locators.Aruodas.UzsienioObjektai.inputUsername, text);
+        Common.sendKeysToElement(Locators.Aruodas.UzsienioObjektai.inputPassword, message);
         Common.clickOnElement(Locators.Aruodas.UzsienioObjektai.buttonLogIn);
     }
 

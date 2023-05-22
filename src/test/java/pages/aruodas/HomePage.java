@@ -1,7 +1,11 @@
 package pages.aruodas;
 
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import pages.Common;
 import pages.Locators;
+import utilities.Driver;
 
 public class HomePage {
     private static String mainWindowName;
@@ -82,14 +86,14 @@ public class HomePage {
     public static void clickToChooseNeighbourhood() {
         Common.clickOnElement(Locators.Aruodas.Home.spanMikrorajonas);
     }
-    public static void switchToNewWindow() {
+
+    public static void chooseAllNeighbourhoods() { // meta klaida, neranda lokatoriu popup lange
+        mainWindowName = Common.getWindowHandleName();
         childWindowName = Common.getWindowHandleNames(mainWindowName);
         Common.switchToWindow(childWindowName);
-    }
-
-    public static void chooseNeighbourhood() {
-        Common.waitForElementToClickable(Locators.Aruodas.Home.labelZirmunai);
-        Common.clickOnElement(Locators.Aruodas.Home.labelZirmunai);
+        Actions actions = new Actions(Driver.getDriver());
+        actions.keyDown(Keys.TAB);
+        Common.clickOnElementByAction(Locators.Aruodas.Home.inputCheckAll);
         Common.clickOnElement(Locators.Aruodas.Home.divSaveSelected);
     }
     public static void clickToChooseStreet() {

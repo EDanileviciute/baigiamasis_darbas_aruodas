@@ -35,7 +35,7 @@ public class NaujiProjektaiTest extends TestBase {
         NaujiProjektaiPage.chooseObjectByType();
         NaujiProjektaiPage.openResultsInMap();
 
-        actualResult = NaujiProjektaiPage.readTextOfProjectWindowInMap(); //neranda Xpath'u zemelapyje
+        actualResult = NaujiProjektaiPage.readTextOfProjectWindowInMap(); // - neranda Xpath'u zemelapyje
 
         Assert.assertTrue(actualResult.equals(expectedResult));
     }
