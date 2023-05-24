@@ -20,18 +20,22 @@ public class ManoAruodasPage {
     }
 
     public static void logIn(String userName, String password) {
-        HomePage.openRegistrationForm();
-        HomePage.waitForPopupWindowForRegistration();
-        HomePage.enterUsername(userName);
-        HomePage.enterPassword(password);
-        HomePage.logIn();
+        Common.clickOnElement(Locators.Aruodas.Home.buttonPrisijungti);
+        if (Common.waitForElementToBeClickableCustomized(Locators.Aruodas.Home.divPrisijungti)) {
+            Common.clickOnElement(Locators.Aruodas.Home.divPrisijungti);
+        }
+        Common.sendKeysToElement(Locators.Aruodas.Home.inputUsername, userName);
+        Common.sendKeysToElement(Locators.Aruodas.Home.inputPassword, password);
+        Common.clickOnElement(Locators.Aruodas.Home.buttonLogIn);
     }
 
     public static void defaultSearch() {
+        Common.waitForElementToBeClickable(Locators.Aruodas.Home.inputSearchButton);
         Common.clickOnElement(Locators.Aruodas.Home.inputSearchButton);
     }
 
     public static void openSavedSearchPage() {
+        Common.waitForElementToBeClickable(Locators.Aruodas.Home.spanManoAruodas);
         Common.clickOnElement(Locators.Aruodas.Home.spanManoAruodas);
         Common.clickOnElement(Locators.Aruodas.Home.divSavedIcons);
     }

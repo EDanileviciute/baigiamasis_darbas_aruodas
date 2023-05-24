@@ -63,7 +63,6 @@ public class HomePage {
 
     public static void chooseObjectType() {
         Common.clickOnElement(Locators.Aruodas.Home.divObjectType);
-
         if (Common.waitForElementToBeClickableCustomized(Locators.Aruodas.Home.labelButaiPardavimui)) {
             Common.clickOnElement(Locators.Aruodas.Home.labelButaiPardavimui);
         }
@@ -104,7 +103,6 @@ public class HomePage {
     public static void chooseInstallationState() {
         Common.clickOnElement(Locators.Aruodas.Home.spanHouseState);
         Common.clickOnElement(Locators.Aruodas.Home.inputFullHouseState);
-
     }
 
     public static void choosePriceRange(String min, String max) {

@@ -19,6 +19,7 @@ public class NaujiProjektaiPage {
     }
 
     public static void chooseCity(String text) {
+        Common.waitForElementToBeClickable(Locators.Aruodas.NaujiProjektai.spanDisplayRegion);
         Common.clickOnElementByAction(Locators.Aruodas.NaujiProjektai.spanDisplayRegion);
         Common.sendKeysToElement(Locators.Aruodas.NaujiProjektai.inputFilterRegion, text);
 
@@ -28,12 +29,13 @@ public class NaujiProjektaiPage {
     }
 
     public static void chooseObjectType() {
+        Common.waitForElementToBeClickable(Locators.Aruodas.NaujiProjektai.spanProjectObjectID);
         Common.clickOnElementByAction(Locators.Aruodas.NaujiProjektai.spanProjectObjectID);
         Common.clickOnElement(Locators.Aruodas.NaujiProjektai.inputProjectObjectIDNamaiPardavimui);
-
     }
 
     public static void openProjectWindow() {
+        Common.waitForElementToBeClickable(Locators.Aruodas.NaujiProjektai.divProjectID);
         Common.clickOnElement(Locators.Aruodas.NaujiProjektai.divProjectID);
     }
 
@@ -42,9 +44,9 @@ public class NaujiProjektaiPage {
     }
 
     public static void chooseObjectByType() {
+        Common.waitForElementToBeClickable(Locators.Aruodas.NaujiProjektai.spanProjectObjectID);
         Common.clickOnElementByAction(Locators.Aruodas.NaujiProjektai.spanProjectObjectID);
         Common.clickOnElement(Locators.Aruodas.NaujiProjektai.inputProjectObjectIDButaiNuomai);
-
     }
 
     public static void openResultsInMap() {
