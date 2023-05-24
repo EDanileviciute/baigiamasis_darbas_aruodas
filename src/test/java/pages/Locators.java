@@ -10,6 +10,9 @@ public class Locators {
                     "//button[@id='onetrust-accept-btn-handler']"
             );
             public static By buttonPrisijungti = By.xpath("//div[@class='reg-menu-div-4']");
+            public static By formRegistrationForm = By.xpath(
+                    "//form[@id='loginForm']//div[@class='popup__right__login__form__error']"
+            );
             public static By divPrisijungti = By.xpath(
                     "//div[@data-id='popup__right__login__container']"
             );
@@ -32,7 +35,6 @@ public class Locators {
             );
             public static By divSaveSelected = By.xpath("//div[@id='btSaveSelected']");
             public static By spanDisplayStreet = By.xpath("//span[@id='display_text_FStreets']");
-            public static By inputInStreetsFilter = By.xpath("//input[@id='inStreetsFilter']");
             public static By labelZirmunuStreet = By.xpath("//label[@title='Žirmūnų g.']");
             public static By inputAreaMinimum = By.xpath("//input[@id='input_FAreaOverAllMin']");
             public static By inputAreaMaximum = By.xpath("//input[@id='input_FAreaOverAllMax']");
@@ -55,14 +57,9 @@ public class Locators {
                     "//label[@class='search-form__field-checkbox']//input[@type='radio' and @value='1']"
             );
             public static By inputSearchText = By.xpath("//input[@id='search_text']");
-            public static By inputQuartalFilter = By.xpath("//input[@id='inQuartalFilter']");
             public static By divSavedIcons = By.xpath("//a//div[@class='icon-u-save']");
-        }
-
-        public static class Prisijungti {
-            public static By formRegistrationForm = By.xpath(
-                    "//form[@id='loginForm']//div[@class='popup__right__login__form__error']"
-            );
+            public static By iframeSelectNeighbourhoodsWindow = By.xpath("//iframe[@id='fancybox-frame']");
+            public static By spanTitleWrapper = By.xpath("//span[@class='title-wrapper']");
         }
 
         public static class NaujiProjektai {
@@ -84,7 +81,11 @@ public class Locators {
             public static By slectSortSelectInput = By.xpath(
                     "//div[@class='edit-search-link']//select[@id='changeListOrder']"
             );
-            public static By spanSearchInformation = By.xpath("//span[@class='search-info__description']");
+            public static By headerSearchInformation = By.xpath("//h1[@class='search-info__title']");
+            public static By iFrameSidelist = By.xpath("//iframe[@id='sideListIframe']");
+            public static By selectCityInMapPalanga = By.xpath(
+                    "//select//option[contains(text(), 'Palanga')]"
+            );
         }
 
         public static class UzsienioObjektai {
@@ -107,6 +108,7 @@ public class Locators {
             public static By spanObjectDescription = By.xpath(
                     "//span[contains(text(), 'Objektas užsienyje')]"
             );
+            public static By iframeOfPopupDecline = By.xpath("//iframe[@name='__tcfapiLocator']");
         }
 
         public static class ManoAruodas {

@@ -89,18 +89,23 @@ public class HomeTest extends TestBase {
         HomePage.enterSearchTextIntoSearchBar(searchText);
 
         actualResult = HomePage.readTextOfSearchResults();
+
         Assert.assertTrue(actualResult.contains(expectedResult));
     }
     @Test
     public void testSearchFormFieldForObjectTypeBySelectNeighbourhood(){
-        String expectedResult;
+        String expectedResult = "Butai Vilniuje";
         String actualResult;
 
         HomePage.chooseObjectType();
         HomePage.chooseMunicipality();
         HomePage.chooseCity();
         HomePage.clickToChooseNeighbourhood();
-        HomePage.chooseAllNeighbourhoods(); // - neina paklikinti elementu popup lange
+        HomePage.chooseAllNeighbourhoods();
+
+        actualResult = HomePage.readTextOfNeighbourhoodSearchResults();
+
+        Assert.assertTrue(actualResult.contains(expectedResult));
     }
 }
 

@@ -203,9 +203,10 @@ public class Common {
         return isImageDisplayed;
     }
 
-    public static void waitForElementToClickable(By locator) {
+    public static boolean waitForElementToClickable(By locator) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(locator));
+        return false;
     }
 
     public static void waitForElementAttributeContains(String attributeName, String attributeValue, By locator) {
@@ -380,5 +381,9 @@ public class Common {
         }
 
         return listOfElementsText;
+    }
+
+    public static void switchToFrame(By locator) {
+        Driver.getDriver().switchTo().frame(getElemet(locator));
     }
 }

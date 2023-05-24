@@ -56,27 +56,39 @@ Expected result: search message says "2-2 kamb., 40-100 m², iki 1000000 €, į
 
 Expected result: search message says "1-5 aukštas, ne pirmas, butai vilnius".
 
+
 5. Test search with selecting neighbourhood:
-   + !!!!!!!!!!!!!!!nesigauna pasirinkti rajonu is popup lango!!!!!!!!!!!!!!!!!!!!!!
+   + In "Objekto tipas" dropdown menu, choose "Butai pardavimui".
+   + In "Savivaldybe" dropdown menu, choose "Vilnius".
+   + In "Gyvenviete" dropdown menu, choose "Vilniaus m.".
+   + Click on "Pasirinkite mikrorajona".
+   + In a popup window, click on "Pazymėti visus mikrorajonus".
+   + Click on "Issaugoti". <br>
+
+Expected result: search window contains text "Butai Vilniuje".
 
 
 ### Test Scenarios for [Aruodas Nauji Projektai Page](https://www.aruodas.lt/nauji-projektai/): <br>
 1. Test New project search by city:
    + In "Vietove" dropdown menu, choose "Kaunas".
    + In "Objekto tipas" dropdown menu, choose "Namai pardavimui".
-   + Click on "Daugiau apie projekta" of the top project.
+   + Click on "Daugiau apie projekta" of the top project. <br>
 
 Expected result: project window has text "Kaunas" in the title.
 
 
 2. Test New project search with map:
-   + !!!!!!!!!!!!!!!testas neranda xpath'u zemelapio lange!!!!!!!!!!!!!!!!!!!!!!
+   + In "Objekto tipas" dropdown menu, choose "Butai nuomai".
+   + Click on "Ziureti zemelapyje".
+   + In dropdown menu, select "Palanga".
+
+Expected result: project window contains text "Nauji projektai".
 
 
 ### Test Scenarios for [Aruodas Uzsienio Objektai Page](https://www.aruodas.lt/uzsienio-objektai/): <br>
 1. Test Foreign objects search with adding it to favourites:
    + In "Objekto tipas" dropdown menu, choose "Sklypai".
-   + In "Salis" dropdown menu, choose "NLatvia".
+   + In "Salis" dropdown menu, choose "Latvia".
    + Click on the top object.
    + Click on "Isiminti".
    + In the popup window, enter:

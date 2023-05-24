@@ -56,12 +56,12 @@ public class HomePage {
     }
 
     public static String readTextOfErrorMessage() {
-        return Common.getTextFromElement(Locators.Aruodas.Prisijungti.formRegistrationForm);
+        return Common.getTextFromElement(Locators.Aruodas.Home.formRegistrationForm);
     }
 
     public static void waitForPopupWindowForRegistrationError() {
-        if (Common.waitForElementToBeClickableCustomized(Locators.Aruodas.Prisijungti.formRegistrationForm)) {
-            Common.clickOnElement(Locators.Aruodas.Prisijungti.formRegistrationForm);
+        if (Common.waitForElementToBeClickableCustomized(Locators.Aruodas.Home.formRegistrationForm)) {
+            Common.clickOnElement(Locators.Aruodas.Home.formRegistrationForm);
         }
     }
 
@@ -84,16 +84,14 @@ public class HomePage {
     }
     public static void clickToChooseNeighbourhood() {
         Common.clickOnElement(Locators.Aruodas.Home.spanMikrorajonas);
+
     }
 
     public static void chooseAllNeighbourhoods() { // meta klaida, neranda lokatoriu popup lange
-        mainWindowName = Common.getWindowHandleName();
-        childWindowName = Common.getWindowHandleNames(mainWindowName);
-        Common.switchToWindow(childWindowName);
-        Actions actions = new Actions(Driver.getDriver());
-        actions.keyDown(Keys.TAB);
+        Common.switchToFrame(Locators.Aruodas.Home.iframeSelectNeighbourhoodsWindow);
         Common.clickOnElementByAction(Locators.Aruodas.Home.inputCheckAll);
         Common.clickOnElement(Locators.Aruodas.Home.divSaveSelected);
+        Common.clickOnElement(Locators.Aruodas.Home.inputSearchButton);
     }
     public static void clickToChooseStreet() {
         Common.clickOnElement(Locators.Aruodas.Home.spanDisplayStreet);
@@ -144,5 +142,9 @@ public class HomePage {
     public static void enterSearchTextIntoSearchBar(String text) {
         Common.sendKeysToElement(Locators.Aruodas.Home.inputSearchText, text);
         Common.clickOnElement(Locators.Aruodas.Home.inputSearchButton);
+    }
+
+    public static String readTextOfNeighbourhoodSearchResults() {
+        return Common.getTextFromElement(Locators.Aruodas.Home.spanTitleWrapper);
     }
 }

@@ -7,9 +7,6 @@ import pages.Locators;
 import utilities.Driver;
 
 public class NaujiProjektaiPage {
-    private static String mainWindowName;
-    private static String childWindowName;
-
     public static void open() {
         Common.setUpDriver();
         Common.openUrl("https://www.aruodas.lt/nauji-projektai/");
@@ -53,18 +50,16 @@ public class NaujiProjektaiPage {
         Common.clickOnElement(Locators.Aruodas.NaujiProjektai.spanDisplayInMap);
     }
 
-    public static void chooseCityInMap(String value) {
-        childWindowName = Common.getWindowHandleNames(mainWindowName);
-        Common.switchToWindow(childWindowName);
+    public static void chooseCityInMap() {
+        Common.switchToFrame(
+                Locators.Aruodas.NaujiProjektai.iFrameSidelist
+        );
         Common.waitForElementToBeVisibleCustomized(Locators.Aruodas.NaujiProjektai.slectSortSelectInput);
         Common.clickOnElement(Locators.Aruodas.NaujiProjektai.slectSortSelectInput);
-        Common.selectOptionByValue(Locators.Aruodas.NaujiProjektai.slectSortSelectInput, value);
+        Common.clickOnElement(Locators.Aruodas.NaujiProjektai.selectCityInMapPalanga);
     }
     public static String readTextOfProjectWindowInMap() {
-        return Common.getTextFromElement(Locators.Aruodas.NaujiProjektai.spanSearchInformation);
+        return Common.getTextFromElement(Locators.Aruodas.NaujiProjektai.headerSearchInformation);
     }
 
-    public static void setMainWindowName(String mainWindowName) {
-        NaujiProjektaiPage.mainWindowName = mainWindowName;
-    }
 }

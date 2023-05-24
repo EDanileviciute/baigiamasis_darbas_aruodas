@@ -27,17 +27,23 @@ public class UzsienioObjektaiPage {
 
     public static void addObjectToFavourites(String text, String message) {
         Common.clickOnElement(Locators.Aruodas.UzsienioObjektai.divObjectListItemLatvia);
-        Common.clickDoubleOnElementWithActions(Locators.Aruodas.UzsienioObjektai.divSave);
+        if (Common.waitForElementToBeClickableCustomized(Locators.Aruodas.UzsienioObjektai.divSave)) {
+            Common.clickOnElementByAction(Locators.Aruodas.UzsienioObjektai.divSave);
+        }
+
         Common.sendKeysToElement(Locators.Aruodas.UzsienioObjektai.inputUsername, text);
         Common.sendKeysToElement(Locators.Aruodas.UzsienioObjektai.inputPassword, message);
         Common.clickOnElement(Locators.Aruodas.UzsienioObjektai.buttonLogIn);
     }
 
     public static void closePopupWindow() {
+        Common.waitForElementToClickable(Locators.Aruodas.UzsienioObjektai.buttonNesutinku);
         Common.clickOnElement(Locators.Aruodas.UzsienioObjektai.buttonNesutinku);
+
     }
 
     public static void checkForObjectInFavourites() {
+        Common.waitForElementToClickable(Locators.Aruodas.UzsienioObjektai.spanManoAruodas);
         Common.clickOnElement(Locators.Aruodas.UzsienioObjektai.spanManoAruodas);
         Common.clickOnElement(Locators.Aruodas.UzsienioObjektai.divIsimintiSkelbimai);
     }
@@ -46,3 +52,4 @@ public class UzsienioObjektaiPage {
         return Common.getTextFromElement(Locators.Aruodas.UzsienioObjektai.spanObjectDescription);
     }
 }
+

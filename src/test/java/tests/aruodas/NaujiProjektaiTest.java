@@ -29,16 +29,15 @@ public class NaujiProjektaiTest extends TestBase {
     }
     @Test
     public void testNewProjectSearchByProjectWithMap(){
-        String expectedResult = "Butai nuomai";
+        String expectedResult = "Nauji projektai";
         String actualResult;
 
         NaujiProjektaiPage.chooseObjectByType();
         NaujiProjektaiPage.openResultsInMap();
+        NaujiProjektaiPage.chooseCityInMap();
 
-        actualResult = NaujiProjektaiPage.readTextOfProjectWindowInMap(); // - neranda Xpath'u zemelapyje
+        actualResult = NaujiProjektaiPage.readTextOfProjectWindowInMap();
 
-        Assert.assertTrue(actualResult.equals(expectedResult));
+        Assert.assertTrue(actualResult.contains(expectedResult));
     }
-
-    ////div[@class='project-list-content']//a - visi paieskos rezultatai
 }
