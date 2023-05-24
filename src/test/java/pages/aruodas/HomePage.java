@@ -18,6 +18,7 @@ public class HomePage {
     }
 
     public static void openRegistrationForm() {
+        Common.waitForElementToBeClickable(Locators.Aruodas.Home.buttonPrisijungti);
         Common.clickOnElement(Locators.Aruodas.Home.buttonPrisijungti);
     }
 
@@ -81,7 +82,6 @@ public class HomePage {
 
     public static void clickToChooseNeighbourhood() {
         Common.clickOnElement(Locators.Aruodas.Home.spanMikrorajonas);
-
     }
 
     public static void chooseAllNeighbourhoods() {

@@ -28,6 +28,8 @@ public class ManoAruodasTest extends TestBase {
 
         actualResult = ManoAruodasPage.readTextOfUserMessage();
 
-        Assert.assertEquals(actualResult, expectedResult);
+        Assert.assertEquals(actualResult, expectedResult,
+                "Actual: %s, Expected: %s".formatted(actualResult, expectedResult)
+        );
     }
 }

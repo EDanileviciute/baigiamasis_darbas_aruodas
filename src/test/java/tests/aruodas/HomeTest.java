@@ -31,7 +31,9 @@ public class HomeTest extends TestBase {
 
         HomePage.logOut();
 
-        Assert.assertEquals(actualResult, expectedResult);
+        Assert.assertEquals(actualResult, expectedResult,
+                "Actual: %s, Expected: %s".formatted(actualResult, expectedResult)
+        );
     }
 
     @Test
@@ -50,7 +52,9 @@ public class HomeTest extends TestBase {
 
         actualResult = HomePage.readTextOfErrorMessage();
 
-        Assert.assertTrue(actualResult.equals(expectedResult));
+        Assert.assertTrue(actualResult.equals(expectedResult),
+                "Actual: %s, Expected: %s".formatted(actualResult, expectedResult)
+        );
     }
 
     @Test
@@ -90,7 +94,9 @@ public class HomeTest extends TestBase {
 
         actualResult = HomePage.readTextOfSearchResults();
 
-        Assert.assertTrue(actualResult.contains(expectedResult));
+        Assert.assertTrue(actualResult.contains(expectedResult),
+                "Actual: %s, Expected: %s".formatted(actualResult, expectedResult)
+        );
     }
     @Test
     public void testSearchFormFieldForObjectTypeBySelectNeighbourhood(){
@@ -105,7 +111,9 @@ public class HomeTest extends TestBase {
 
         actualResult = HomePage.readTextOfNeighbourhoodSearchResults();
 
-        Assert.assertTrue(actualResult.contains(expectedResult));
+        Assert.assertTrue(actualResult.contains(expectedResult),
+                "Actual: %s, Expected: %s".formatted(actualResult, expectedResult)
+        );
     }
 }
 

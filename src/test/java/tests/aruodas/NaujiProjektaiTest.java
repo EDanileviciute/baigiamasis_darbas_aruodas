@@ -25,7 +25,9 @@ public class NaujiProjektaiTest extends TestBase {
 
         actualResult = NaujiProjektaiPage.readTextOfProjectWindow();
 
-        Assert.assertTrue(actualResult.contains(expectedResult));
+        Assert.assertTrue(actualResult.contains(expectedResult),
+                "Actual: %s, Expected: %s".formatted(actualResult, expectedResult)
+        );
     }
     @Test
     public void testNewProjectSearchByProjectWithMap(){
@@ -38,6 +40,8 @@ public class NaujiProjektaiTest extends TestBase {
 
         actualResult = NaujiProjektaiPage.readTextOfProjectWindowInMap();
 
-        Assert.assertTrue(actualResult.contains(expectedResult));
+        Assert.assertTrue(actualResult.contains(expectedResult),
+                "Actual: %s, Expected: %s".formatted(actualResult, expectedResult)
+        );
     }
 }
