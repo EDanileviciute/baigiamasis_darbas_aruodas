@@ -24,7 +24,7 @@ public class TestListener implements ITestListener {
 
                 String destinationPath = "C:\\JAVA paskaitos\\baigiamasis_darbas_aruodas\\screenshots";
 
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd_HH_mm_SSS");
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd_HH_mm_ss_SS");
                 String date = LocalDateTime.now().format(formatter);
                 String fileName = "screenshot_" + date + ".png";
 

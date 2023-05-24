@@ -37,13 +37,12 @@ public class UzsienioObjektaiPage {
     }
 
     public static void closePopupWindow() {
-        Common.waitForElementToClickable(Locators.Aruodas.UzsienioObjektai.buttonNesutinku);
+        Common.waitForElementToBeClickable(Locators.Aruodas.UzsienioObjektai.buttonNesutinku);
         Common.clickOnElement(Locators.Aruodas.UzsienioObjektai.buttonNesutinku);
-
     }
 
     public static void checkForObjectInFavourites() {
-        Common.waitForElementToClickable(Locators.Aruodas.UzsienioObjektai.spanManoAruodas);
+        Common.waitForElementToBeClickable(Locators.Aruodas.UzsienioObjektai.spanManoAruodas);
         Common.clickOnElement(Locators.Aruodas.UzsienioObjektai.spanManoAruodas);
         Common.clickOnElement(Locators.Aruodas.UzsienioObjektai.divIsimintiSkelbimai);
     }

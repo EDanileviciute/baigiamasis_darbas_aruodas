@@ -1,14 +1,10 @@
 package pages.aruodas;
 
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import pages.Common;
 import pages.Locators;
-import utilities.Driver;
 
 public class HomePage {
-    private static String mainWindowName;
-    private static String childWindowName;
+
     public static void open() {
         Common.setUpDriver();
         Common.openUrl("https://www.aruodas.lt/");
@@ -79,36 +75,32 @@ public class HomePage {
     }
 
     public static void chooseCity() {
+        Common.waitForElementToBeClickable(Locators.Aruodas.Home.divDistrict);
         Common.clickOnElement(Locators.Aruodas.Home.divDistrict);
         Common.clickOnElement(Locators.Aruodas.Home.labelVilniausM);
     }
+
     public static void clickToChooseNeighbourhood() {
         Common.clickOnElement(Locators.Aruodas.Home.spanMikrorajonas);
 
     }
 
-    public static void chooseAllNeighbourhoods() { // meta klaida, neranda lokatoriu popup lange
+    public static void chooseAllNeighbourhoods() {
         Common.switchToFrame(Locators.Aruodas.Home.iframeSelectNeighbourhoodsWindow);
         Common.clickOnElementByAction(Locators.Aruodas.Home.inputCheckAll);
         Common.clickOnElement(Locators.Aruodas.Home.divSaveSelected);
         Common.clickOnElement(Locators.Aruodas.Home.inputSearchButton);
-    }
-    public static void clickToChooseStreet() {
-        Common.clickOnElement(Locators.Aruodas.Home.spanDisplayStreet);
-    }
-    public static void chooseStreet() {
-        Common.waitForElementToClickable(Locators.Aruodas.Home.labelZirmunuStreet);
-        Common.clickOnElement(Locators.Aruodas.Home.labelZirmunuStreet);
-        Common.clickOnElement(Locators.Aruodas.Home.divSaveSelected);
     }
 
     public static void chooseSizeRange(String min, String max) {
         Common.sendKeysToElement(Locators.Aruodas.Home.inputAreaMinimum, min);
         Common.sendKeysToElement(Locators.Aruodas.Home.inputAreaMaximum, max);
     }
+
     public static void chooseRoomNumber() {
         Common.clickOnElement(Locators.Aruodas.Home.divRoomNumber2);
     }
+
     public static void chooseInstallationState() {
         Common.clickOnElement(Locators.Aruodas.Home.spanHouseState);
         Common.clickOnElement(Locators.Aruodas.Home.inputFullHouseState);

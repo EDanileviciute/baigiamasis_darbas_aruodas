@@ -29,7 +29,7 @@ public class UzsienioObjektaiTest extends TestBase {
 
         actualResult = UzsienioObjektaiPage.readTextInFavourites();
 
-        Assert.assertTrue(actualResult.equals(expectedResult));
+        Assert.assertEquals(actualResult, expectedResult);
     }
 
 }

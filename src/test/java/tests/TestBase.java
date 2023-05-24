@@ -11,7 +11,6 @@ import utilities.TestListener;
 @Listeners(TestListener.class)
 
 public abstract class TestBase {
-    private WebDriver driver;
 
     @BeforeMethod
     public abstract void setUp();

@@ -5,12 +5,14 @@ import pages.Common;
 import pages.Locators;
 
 import java.util.List;
+
 public class ManoAruodasPage {
     public static void open() {
         Common.setUpDriver();
-        Common.openUrl("https://www.aruodas.lt/");
+        Common.openUrl("https://www.aruodas.lt/mano-aruodas/");
 
     }
+
     public static void closeCookiesAcceptanceWindow() {
         if (Common.waitForElementToBeClickableCustomized(Locators.Aruodas.Home.buttonAcceptCookiesSutinku)) {
             Common.clickOnElement(Locators.Aruodas.Home.buttonAcceptCookiesSutinku);

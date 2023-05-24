@@ -26,6 +26,7 @@ public class NaujiProjektaiPage {
         actions.keyDown(Keys.ENTER);
         actions.build().perform();
     }
+
     public static void chooseObjectType() {
         Common.clickOnElementByAction(Locators.Aruodas.NaujiProjektai.spanProjectObjectID);
         Common.clickOnElement(Locators.Aruodas.NaujiProjektai.inputProjectObjectIDNamaiPardavimui);
@@ -58,6 +59,7 @@ public class NaujiProjektaiPage {
         Common.clickOnElement(Locators.Aruodas.NaujiProjektai.slectSortSelectInput);
         Common.clickOnElement(Locators.Aruodas.NaujiProjektai.selectCityInMapPalanga);
     }
+
     public static String readTextOfProjectWindowInMap() {
         return Common.getTextFromElement(Locators.Aruodas.NaujiProjektai.headerSearchInformation);
     }
