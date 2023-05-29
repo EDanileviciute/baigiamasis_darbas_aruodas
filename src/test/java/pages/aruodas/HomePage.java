@@ -11,7 +11,6 @@ public class HomePage {
     }
 
     public static void closeCookiesAcceptanceWindow() {
-
         if (Common.waitForElementToBeClickableCustomized(Locators.Aruodas.Home.buttonAcceptCookiesSutinku)) {
             Common.clickOnElement(Locators.Aruodas.Home.buttonAcceptCookiesSutinku);
         }
@@ -22,20 +21,15 @@ public class HomePage {
         Common.clickOnElement(Locators.Aruodas.Home.buttonPrisijungti);
     }
 
-    public static void waitForPopupWindowForRegistration() {
+    public static void enterUsername(String text) {
         if (Common.waitForElementToBeClickableCustomized(Locators.Aruodas.Home.divPrisijungti)) {
             Common.clickOnElement(Locators.Aruodas.Home.divPrisijungti);
         }
-    }
-
-    public static void enterUsername(String text) {
-        Common.sendKeysToElement(Locators.Aruodas.Home.inputUsername,
-                text);
+        Common.sendKeysToElement(Locators.Aruodas.Home.inputUsername, text);
     }
 
     public static void enterPassword(String text) {
-        Common.sendKeysToElement(Locators.Aruodas.Home.inputPassword,
-                text);
+        Common.sendKeysToElement(Locators.Aruodas.Home.inputPassword, text);
     }
 
     public static void logIn() {

@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -18,7 +19,6 @@ public class Common {
     }
 
     public static void openUrl(String url) {
-
         Driver.getDriver().get(url);
     }
 
@@ -63,7 +63,6 @@ public class Common {
 
     public static boolean waitForElementToBeClickableCustomized(By locator) {
         int waitingSeconds = 5;
-
         for (int i = 0; i < (waitingSeconds * 2); i++) {
             if (getElemet(locator).isEnabled()) {
                 return true;
@@ -75,10 +74,7 @@ public class Common {
 
     public static boolean waitForElementToBeVisibleCustomized(By locator) {
         int waitingSeconds = 5;
-
         for (int i = 0; i < (waitingSeconds * 2); i++) {
-
-
             try {
                 getElemet(locator);
                 return true;
@@ -88,6 +84,7 @@ public class Common {
         }
         return false;
     }
+
     public static void clickOnElementByAction(By locator) {
         Actions actions = new Actions(Driver.getDriver());
         actions
@@ -97,8 +94,13 @@ public class Common {
                 .perform();
     }
 
-
     public static void switchToFrame(By locator) {
         Driver.getDriver().switchTo().frame(getElemet(locator));
+    }
+
+    public static void clickEnterByAction() {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.keyDown(Keys.ENTER);
+        actions.build().perform();
     }
 }

@@ -1,10 +1,7 @@
 package pages.aruodas;
 
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import pages.Common;
 import pages.Locators;
-import utilities.Driver;
 
 public class NaujiProjektaiPage {
     public static void open() {
@@ -22,10 +19,7 @@ public class NaujiProjektaiPage {
         Common.waitForElementToBeClickable(Locators.Aruodas.NaujiProjektai.spanDisplayRegion);
         Common.clickOnElementByAction(Locators.Aruodas.NaujiProjektai.spanDisplayRegion);
         Common.sendKeysToElement(Locators.Aruodas.NaujiProjektai.inputFilterRegion, text);
-
-        Actions actions = new Actions(Driver.getDriver());
-        actions.keyDown(Keys.ENTER);
-        actions.build().perform();
+        Common.clickEnterByAction();
     }
 
     public static void chooseObjectType() {
@@ -54,9 +48,7 @@ public class NaujiProjektaiPage {
     }
 
     public static void chooseCityInMap() {
-        Common.switchToFrame(
-                Locators.Aruodas.NaujiProjektai.iFrameSidelist
-        );
+        Common.switchToFrame(Locators.Aruodas.NaujiProjektai.iFrameSidelist);
         Common.waitForElementToBeVisibleCustomized(Locators.Aruodas.NaujiProjektai.slectSortSelectInput);
         Common.clickOnElement(Locators.Aruodas.NaujiProjektai.slectSortSelectInput);
         Common.clickOnElement(Locators.Aruodas.NaujiProjektai.selectCityInMapPalanga);
@@ -65,5 +57,4 @@ public class NaujiProjektaiPage {
     public static String readTextOfProjectWindowInMap() {
         return Common.getTextFromElement(Locators.Aruodas.NaujiProjektai.headerSearchInformation);
     }
-
 }

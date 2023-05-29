@@ -13,8 +13,9 @@ public class NaujiProjektaiTest extends TestBase {
         NaujiProjektaiPage.open();
         NaujiProjektaiPage.closeCookiesAcceptanceWindow();
     }
+
     @Test
-    public void testNewProjectSearchByCity(){
+    public void testNewProjectSearchByCity() {
         String chosenCity = "Kaunas";
         String expectedResult = "Kaunas";
         String actualResult;
@@ -29,8 +30,9 @@ public class NaujiProjektaiTest extends TestBase {
                 "Actual: %s, Expected: %s".formatted(actualResult, expectedResult)
         );
     }
+
     @Test
-    public void testNewProjectSearchByProjectWithMap(){
+    public void testNewProjectSearchByProjectWithMap() {
         String expectedResult = "Nauji projektai";
         String actualResult;
 

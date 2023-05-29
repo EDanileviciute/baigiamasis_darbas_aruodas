@@ -30,7 +30,6 @@ public class UzsienioObjektaiPage {
         if (Common.waitForElementToBeClickableCustomized(Locators.Aruodas.UzsienioObjektai.divSave)) {
             Common.clickOnElementByAction(Locators.Aruodas.UzsienioObjektai.divSave);
         }
-
         Common.sendKeysToElement(Locators.Aruodas.UzsienioObjektai.inputUsername, text);
         Common.sendKeysToElement(Locators.Aruodas.UzsienioObjektai.inputPassword, message);
         Common.clickOnElement(Locators.Aruodas.UzsienioObjektai.buttonLogIn);

@@ -31,5 +31,4 @@ public class UzsienioObjektaiTest extends TestBase {
 
         Assert.assertEquals(actualResult, expectedResult);
     }
-
 }

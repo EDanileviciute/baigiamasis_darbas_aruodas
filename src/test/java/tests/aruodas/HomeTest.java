@@ -22,7 +22,6 @@ public class HomeTest extends TestBase {
         String actualResult;
 
         HomePage.openRegistrationForm();
-        HomePage.waitForPopupWindowForRegistration();
         HomePage.enterUsername(userName);
         HomePage.enterPassword(password);
         HomePage.logIn();
@@ -44,7 +43,6 @@ public class HomeTest extends TestBase {
         String actualResult;
 
         HomePage.openRegistrationForm();
-        HomePage.waitForPopupWindowForRegistration();
         HomePage.enterUsername(userName);
         HomePage.enterPassword(password);
         HomePage.logIn();
@@ -98,8 +96,9 @@ public class HomeTest extends TestBase {
                 "Actual: %s, Expected: %s".formatted(actualResult, expectedResult)
         );
     }
+
     @Test
-    public void testSearchFormFieldForObjectTypeBySelectNeighbourhood(){
+    public void testSearchFormFieldForObjectTypeBySelectNeighbourhood() {
         String expectedResult = "Butai Vilniuje";
         String actualResult;
 
@@ -116,4 +115,3 @@ public class HomeTest extends TestBase {
         );
     }
 }
-

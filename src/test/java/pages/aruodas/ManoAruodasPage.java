@@ -10,7 +10,6 @@ public class ManoAruodasPage {
     public static void open() {
         Common.setUpDriver();
         Common.openUrl("https://www.aruodas.lt/mano-aruodas/");
-
     }
 
     public static void closeCookiesAcceptanceWindow() {

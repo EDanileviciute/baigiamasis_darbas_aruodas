@@ -17,8 +17,9 @@ public class ManoAruodasTest extends TestBase {
         ManoAruodasPage.closeCookiesAcceptanceWindow();
         ManoAruodasPage.logIn(userName, password);
     }
+
     @Test
-    public void testSearchAndDeleteSearchResults(){
+    public void testSearchAndDeleteSearchResults() {
         String expectedResult = "Neturite išsaugotų paieškų.";
         String actualResult;
 
